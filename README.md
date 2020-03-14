@@ -1,4 +1,4 @@
-# zhihu_login
+# zhihu_login:仿造了知乎的登录页面
   image文件夹包含download.html文件中所有插入的图片
   
   favicon.ico文件对应知乎网页的icon
