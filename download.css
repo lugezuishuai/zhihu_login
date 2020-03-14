@@ -1,0 +1,373 @@
+body{
+    background-color: #B8E5F8;
+    background-image: url(./image/sign_bg.db29b0fb.png);
+    background-size: 100%;
+    background-attachment: fixed;    /*使得移动浏览器页面时背景图像不会随着移动*/
+}
+
+#logo > img {
+    width: 128th;
+    height: 81px;
+}
+
+#logo{
+    text-align: center;
+    margin-top: 16px;
+    margin-bottom: 24px;
+}
+
+#content{
+    width: 350px;
+    height: 312px;
+    background-color: white;
+    margin: auto;
+    padding: 0px 24px;
+    border-radius: 4px 4px 0px 0px;    /*添加圆角边界*/
+    position: relative;     /*相对父级元素定位*/
+}
+
+#content_login_select{
+    font-size: 16px;
+}
+
+#content_login_select > span{
+    height: 18px;
+    margin: 0px 2px;
+    display: inline-block;
+}
+
+#content_login_select > span:first-child{
+    margin-right: 16px;      /*为什么这里选择的是第二个span元素？*/
+}
+
+/*不推荐使用：
+.chick {
+    padding: 20px 0px 18px 0px !important;
+    font-weight: 700;
+    border-bottom: #0084FF solid;
+}
+*/
+
+#content_login_select > span.click{
+    padding: 20px 0px 18px 0px;
+    font-weight: 700;
+    border-bottom: #0084FF solid 3px;
+}
+
+#ewn{
+    position: absolute;
+    width: 52px;
+    /*将二维码图像放在右上角*/
+    top: 0px;
+    right: 0px;
+    border-radius: 0px 4px 0px 0px;
+    cursor: pointer;   /*手指*/
+    transition: 0.3s;   /*过渡时间*/
+}
+
+#ewn:hover{opacity: 0.6;}    /*opacity为不透明度*/
+
+/*The Modal (background) */
+/*新弹出来的窗口*/
+.modal{
+    display: none; /*将 display 设置为 none 会将元素从可访问性树中移除。这会导致该元素及其后续元素不再被屏幕阅读技术访问。*/
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    /*这里的width和height指的是占满整个窗口*/
+    width: 100%;
+    height: 100%;
+    /*这里的overflow:auto指的是如果图片分辨率超过窗口大小，允许设置滚动条*/
+    overflow: auto;
+    background-color: rgb(0, 0, 0 );
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/*Modal Content (image)*/
+/*放置在新弹出来的窗口中间的二维码图片*/
+.modal-content{
+    margin: auto;   /*居中*/
+    display: block;
+    width: 30%;
+    max-width: 700px;
+}
+
+/*Caption of Modal Image*/
+/*这里定义了img标签中的alt显示的效果，为什么会在这里显示？*/
+#caption{
+    margin: auto;    /*居中*/
+    display: block;  /*将其设置为块级元素*/
+    width: 80%; 
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    /*background-color: red;*/
+    padding: 10px 0px;
+    height: 150px;
+}
+
+/*Add Animation*/
+.modal-content, #caption{
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+/*相当于是定义一个动画，一般都需要定义@keyframes和@-webkit-keyframes 两种形式*/
+@-webkit-keyframes zoom{
+    from{-webkit-transform: scale(0)}
+    to{-webkit-transform: scale(1)}    /*变化后图像和原来的比例*/
+}
+
+@keyframes zoom{
+    from{transform: scale(0)}
+    /*为什么这里只能是1,变到其他比例大小之后又会变回来？*/
+    to {transform: scale(1)}    
+}
+
+/*The Close Button*/
+.close{
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus{
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+    .modal-content{
+        width: 100%;
+    }
+}
+
+/*使用CSS画三角形*/
+#img_div{
+    position: absolute;
+    border: 26px #fff solid;
+    border-top: 26px transparent solid ;    /*transparent全透明黑色，类似于rgba(0, 0, 0, 0)*/
+    border-right: 26px transparent solid;
+    top: 0px;
+    right: 0px;
+    border-radius: 0px 2px 0px 0px;
+    pointer-events: none;
+}
+
+/*input属于内联块级元素inline-blcok,在同一行，可以调节长宽高和边距*/
+#content_login_form input:not([type=submit]) {
+    width: 100%;
+    height: 42px;
+    border: none;
+    border-bottom: 0.5px rgba(0, 0, 0, 0.2) solid;
+    outline: none;    /*这里将outline属性设置为none,表示去掉表格四周的线*/
+    margin: 7px 0px;
+    font-size: 14px;
+}
+
+#content_login_form{
+    position: relative;
+    padding-top: 20px;
+}
+
+#content_login_form img#appear{
+    width: 22px;
+    height: 18px; 
+    position: absolute;
+    right: 0px;
+    top: 100px;
+    cursor: pointer;
+}
+
+#content_login_form img#hide{
+    width: 23px;
+    height: 21px; 
+    position: absolute;
+    right: 0px;
+    top: 100px;
+    cursor: pointer;
+    display: none;
+    z-index: 1;
+}
+
+#content_login_form img:hover{
+    color: #677288;
+}
+
+#content_login_form > form > div{
+    padding: 5px 0px;
+}
+
+#content_login_form > form > div > a{
+    font-size: 0.9em;
+    color: #175199;
+}
+
+#content_login_form > form > div > a:last-of-type{
+    float: right;       /*右浮动*/
+    color: #8792a8;
+}
+
+/*#content a:hover {
+            color: #677288 !important;
+        }
+*/
+
+/*注意：尽量不要使用！important,因为这个会覆盖任何其他的说明,应该使用优先级*/
+#content_login_form > form > div> a:hover{
+    color: #677288
+}
+
+#content_login_form input[type=submit]{
+    width: 100%;
+    height: 36px;
+    border: none;
+    background-color: #0084FF;
+    color: white;
+    margin-top: 30px;
+    font-size: 14px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#content_login_form input[type=submit]:hover{
+    background-color: #0074dd;
+}
+
+#content_login_bottom{
+    background-color: #F6F6F6;
+    margin: auto;
+    width: 356px;
+    height: 26px;
+    border-radius: 0px 0px 4px 4px;
+    font-size: 13px;
+    padding: 17px 21px;
+    color: #8792a8;
+}
+
+#content_login_bottom > div#href > a{
+    color: #8792a8;
+}
+
+#social_contact_login{
+    margin-top: 24px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 350px;
+    height: 16px;
+    border-radius: 3px;
+    background-color: #fff;
+    font-size: 15px;
+    padding: 22px 24px;
+    color: #8a95aa;
+    text-decoration: none;
+}
+
+#social_contact_login a{
+    display: inline-block;
+    margin: 0px 6px;
+    color: #8a95aa;
+}
+
+#social_contact_login > div{
+    float: right;
+}
+
+#social_contact_login > span{
+    float: left;
+}
+
+#social_contact_login img.application{
+    width: 24px;
+    position: relative;
+    top: -7px;
+}
+
+#social_contact_login a > span{
+    position: relative;   /*相对定位:相对于自己本老正常的位置定位*/
+    top: -13px;
+}
+
+#download{
+    margin-top: 24px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 350px;
+    height: 22px;
+    border-radius: 3px;
+    background-color: #fff;
+    font-size: 16px;
+    padding: 22px 24px;
+    text-decoration: none;
+}
+
+#download a{
+    display: inline-block;
+    color: #0e8bff;
+}
+
+#download a:first-child{
+    float: left;
+}
+
+#download a:last-child{
+    float: right;
+}
+
+#download img.download{
+    width: 25px;
+    position: relative;
+    top: -2px;
+}
+
+#download span{
+    position: relative;
+    top: -10px;
+}
+
+#content_bottom{
+    text-align: center;
+    padding-top: 16px;
+    padding-bottom: 18px;
+    font-size: 12px;
+    color: #fff;
+}
+
+#content_bottom a:hover{
+    text-decoration: underline;
+}
+
+#content_bottom img{
+    width: 16px;
+}
+
+#content_bottom a{
+    color: #fff;
+}
+
+#content_bottom > div{
+    margin: 8px;
+}
+
+#content_bottom > div:first-child > a{
+    padding: 0px 2px;
+}
+
+#content_bottom > div > *:after{
+    content: ' . ';
+}
+
+#content_bottom > div > *:last-child:after{
+    content: ' ';
+}

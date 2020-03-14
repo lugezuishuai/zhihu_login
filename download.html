@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>知乎 - 有问题，上知乎</title>
+        <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
+        <link rel="stylesheet" type="text/css" href="./reset.css">
+        <link rel="stylesheet" type="text/css" href="./download.css">
+        <!--<link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css">-->
+
+    </head>
+
+    <body>
+        <div id="logo">
+            <img src="./image/logo.png" alt="知乎">
+        </div>
+
+        <div id="content">
+            <div id="content_login_select">
+                <span>免密码登录</span>
+                <span class="click">密码登录</span>
+            </div>
+                
+            <img  src="./image/二维码.png" alt="知乎 - 有问题，上知乎" id="ewn">
+
+            <!--The Modal-->
+            <!--弹出新窗口-->
+            <div id="myModal" class="modal">
+                <!--这里的span是定义了X的部分，这里要定义为内联元素-->
+                <span class="close">×</span>
+                <!--这里的img是定义了展示在新窗口中的图片部分-->
+                <img class="modal-content" id="img01">
+                <!--这里div是展示了图片下的描述部分，这里要把它定义为块级元素div-->
+                <div id="caption"></div>
+            </div>
+            
+            <div id="img_div"></div>
+
+            <div id="content_login_form">
+                <form action="#" method="POST">
+                    <input type="text" name="userName" placeholder="手机号或邮箱">
+                    <input id="pwd" type="password" name="password" placeholder="密码"><br>
+                    <!-- <i class="fa fa-eye" onclick="showhide()" id="eye"></i> -->
+                    <img src="./image/eye_open.PNG" id="appear">
+                    <img src="./image/eye_close.PNG" id="hide">
+                    <div>
+                        <a href="#">海外手机号登录</a>
+                        <a href="#">忘记密码?</a><br>
+                    </div>
+                    <input type="submit" value="注册/登录">
+                </form>
+            </div>
+        </div>
+        
+        <div id="content_login_bottom">
+            <div id="href">
+                未注册手机验证后自动登录<br>
+                注册即代表同意
+                <a href="#">《知乎协议》</a>
+                <a href="#">《隐私保护协议》</a>
+            </div>
+        </div>
+        <div id="social_contact_login">
+            <span>社交账号登录</span>
+            <div>
+                <a href="#">
+                    <img class="application" src="./image/wechat-cut.PNG" alt=""/>
+                    <span>微信</span>
+                </a>
+                <a href="#">
+                    <img class="application" src="./image/QQ-cut.PNG" alt=""/>
+                    <span>QQ</span>
+                </a>
+                <a href="#">
+                    <img class="application" src="./image/weibo-cut.PNG" alt=""/>
+                    <span>微博</span>
+                </a>
+            </div>
+        </div>
+
+        <div id="download">
+            <a href="#">
+                <img class="download" src="./image/jigou.PNG"/>
+                <span>开通机构号</span>
+            </a>
+            <a href="#">
+                <img class="download" src="./image/logo-small.PNG"/>
+                <span>下载知乎App</span>
+            </a>
+        </div>
+
+        <div id="content_bottom">
+            <div>
+                <a href="#">知乎专栏</a>
+                <a href="#">圆桌</a>
+                <a href="#">发现</a>
+                <a href="#">移动应用</a>
+                <a href="#">联系我们</a>
+                <a href="#">来知乎工作</a>
+                <a href="#">注册机构号</a>
+            </div>
+            <div>
+                <span>© 2020 知乎</span>
+                <a href="#">京 ICP 证 110745 号</a>
+                <a href="#">京 ICP 备 13052560 号 - 1</a>
+                <img src="./image/icon.png" alt=""/>
+                <a href="#">京公网安备 11010802010035 号</a>
+                <a href="#">出版物经营许可证</a>
+            </div>
+            <div>
+                <a href="#">侵权举报</a>
+                <a href="#">网上有害信息举报专区</a>
+                <a href="#">儿童色情信息举报专区</a>
+                <span>违法和不良信息举报：010-82716601</span>
+            </div>
+        </div>
+         <!--将脚本放在body标签里，当页面被加载完之后才读取脚本-->
+         <script type="text/javascript" src="./hide_eye.js"></script>
+         <script type="text/javascript" src="./Modal.js"></script>
+    </body>
+</html>
