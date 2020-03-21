@@ -176,6 +176,14 @@ body{
     font-size: 14px;
 }
 
+#content_login_form input#username_blur, input#pwd_blur{
+    display: none;
+}
+
+#content_login_form input#username_blur::placeholder, input#pwd_blur::placeholder{
+    color: red;
+}
+
 #content_login_form{
     position: relative;
     padding-top: 20px;
