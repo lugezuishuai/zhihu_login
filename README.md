@@ -7,4 +7,7 @@
   
   Modal.js控制二维码的单独显示
   
-  reset.js对浏览器兼容起作用
+  reset.css对浏览器兼容起作用
+  
+  预览：
+  [demo](https://lugezuishuai.github.io/zhihu_login/download.html)
